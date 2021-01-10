@@ -53,6 +53,7 @@ def get_readable_time(seconds: int) -> str:
 PM_START_TEXT = """
 Hey {}, im {}! 
 Telegram fun management bot add me to your group to utilize me.
+To check my modules press here /help
 """
 
 HELP_STRINGS = """
