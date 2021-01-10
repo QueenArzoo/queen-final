@@ -52,16 +52,13 @@ def get_readable_time(seconds: int) -> str:
 
 PM_START_TEXT = """
 Hey {}, im {}! 
-You can find my list of available commands with /help.
+Telegram fun management bot add me to your group to utilize me.
 """
 
 HELP_STRINGS = """
 Hey its me *{}* again.
-*Main* commands available:
- • /help <module name>: PM's you info about that module.
- 
-{}
-And the following:
+ {}
+So the following:
 """.format(
     dispatcher.bot.first_name, ""
     if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
