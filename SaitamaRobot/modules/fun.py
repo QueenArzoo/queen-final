@@ -254,9 +254,10 @@ __help__ = """
  • `/rlg`*:* Join ears,nose,mouth and create an emo ;-;
  • `/shout <keyword>`*:* write anything you want to give loud shout
  • `/weebify <text>`*:* returns a weebified text
- • `/sanitize`*:* always use this before /pat or any contact
  • `/pat`*:* pats a user, or get patted
  • `/8ball`*:* predicts using 8ball method 
+ • `/wiki`*:* wikipedia your query
+ • `/ud`*:* Type the word or expression you want to search
 """
 
 SANITIZE_HANDLER = DisableAbleCommandHandler("sanitize", sanitize)
@@ -289,7 +290,7 @@ dispatcher.add_handler(DECIDE_HANDLER)
 dispatcher.add_handler(EIGHTBALL_HANDLER)
 dispatcher.add_handler(TABLE_HANDLER)
 
-__mod_name__ = "Fun"
+__mod_name__ = "Extra"
 __command_list__ = [
     "runs", "slap", "roll", "toss", "shrug", "bluetext", "rlg", "decide",
     "table", "pat", "sanitize", "shout", "weebify", "8ball"
