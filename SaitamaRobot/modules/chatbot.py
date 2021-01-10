@@ -74,7 +74,7 @@ def remove_chat(update: Update, context: CallbackContext):
 
 def check_message(context: CallbackContext, message):
     reply_msg = message.reply_to_message
-    if message.text.lower() == "queen":
+    if message.text.lower() == "king":
         return True
     if reply_msg:
         if reply_msg.from_user.id == context.bot.get_me().id:
@@ -136,19 +136,17 @@ def list_chatbot_chats(update: Update, context: CallbackContext):
 
 
 __help__ = f"""
-Chatbot utilizes the CoffeeHouse API and allows queen to talk.
+Chatbot utilizes the CoffeeHouse API and allows to talk.
 
 *Commands:* 
 *Admins only:*
- • `/addchat`*:* Activate A.I in group.
- • `/rmchat`*:*  Deactivate A.I in group.
+ • `/activateai`*:* Activate A.I in group.
+ • `/disableai`*:*  Deactivate A.I in group.
 
-Reports bugs at @{SUPPORT_CHAT}
-*Powered by CoffeeHouse* (https://coffeehouse.intellivoid.net/) from @Intellivoid
 """
 
-ADD_CHAT_HANDLER = CommandHandler("addchat", add_chat)
-REMOVE_CHAT_HANDLER = CommandHandler("rmchat", remove_chat)
+ADD_CHAT_HANDLER = CommandHandler("activateai", add_chat)
+REMOVE_CHAT_HANDLER = CommandHandler("disableai", remove_chat)
 CHATBOT_HANDLER = MessageHandler(
     Filters.text & (~Filters.regex(r"^#[^\s]+") & ~Filters.regex(r"^!")
                     & ~Filters.regex(r"^\/")), chatbot)
