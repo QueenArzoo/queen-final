@@ -197,7 +197,7 @@ Setting the log channel is done by:
 • forwarding the `/setlog` to the group
 """
 
-    __mod_name__ = "Group-log"
+    __mod_name__ = ""
 
     LOG_HANDLER = CommandHandler("logchannel", logging)
     SET_LOG_HANDLER = CommandHandler("setlog", setlog)
