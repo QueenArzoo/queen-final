@@ -59,10 +59,7 @@ HELP_STRINGS = """
 Hey its me *{}* again.
 *Main* commands available:
  • /help <module name>: PM's you info about that module.
- • /donate: information on how to donate!
- • /settings:
-   • in PM: will send you your settings for all supported modules.
-   • in a group: will redirect you to pm, with all that chat's settings.
+ 
 {}
 And the following:
 """.format(
@@ -72,7 +69,6 @@ And the following:
 SAITAMA_IMG = "https://telegra.ph/file/41063f2eb4741ad59bad9.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
-queen is hosted on aws servers
 To keep the bot alive: [PayPal](paypal.me/deepakroddah)."""
 
 IMPORTED = {}
@@ -191,14 +187,10 @@ def start(update: Update, context: CallbackContext):
                 reply_markup=InlineKeyboardMarkup(
                     [[
                         InlineKeyboardButton(
-                            text="⚡ Push queen to your group ⚡",
+                            text="Add me to your group",
                             url="t.me/{}?startgroup=true".format(
                                 context.bot.username))
-                     ],
-                     [
-                         InlineKeyboardButton(
-                             text="⚙️ Source code ⚙️",
-                             url="https://github.com/okgtfo/queenmusic")
+                   
                      ]]))
     else:
         update.effective_message.reply_text(
