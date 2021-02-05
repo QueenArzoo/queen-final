@@ -17,7 +17,7 @@ def lyric(update: Update, context: CallbackContext):
     else:
         song = Song.find_song(query)
         if song:
-            if song.lyric:
+            if song.lyrics:
                 reply = song.format()
             else:
                 reply = "Couldn't find any lyrics for that song!"
