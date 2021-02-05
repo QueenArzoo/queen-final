@@ -17,7 +17,7 @@ from SaitamaRobot.__main__ import STATS
 from SaitamaRobot.modules.disable import DisableAbleCommandHandler
 from SaitamaRobot.modules.helper_funcs.extraction import extract_user
 
-def tts(update: Update, context: CallbackContext):
+def ts(update: Update, context: CallbackContext):
     args = context.args
     current_time = datetime.strftime(datetime.now(), "%d.%m.%Y %H:%M:%S")
     filename = datetime.now().strftime("%d%m%y-%H%M%S%f")
@@ -37,11 +37,11 @@ def tts(update: Update, context: CallbackContext):
     with open("k.mp3", "rb") as speech:
         update.message.reply_voice(speech, quote=False)
 
-dispatcher.add_handler(CommandHandler('tts', tts))
+dispatcher.add_handler(CommandHandler('ts', ts))
 
 __help__ = """
 *turns your text to audio format(beta phase)*
 just do as follows:-
- -/tts <Any Text> : Converts text to speech.
+ -/ts <Any Text> : Converts text to speech.
 """
 __mod_name__ = "Text-Speech"
