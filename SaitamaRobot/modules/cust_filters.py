@@ -623,7 +623,7 @@ Check `/markdownhelp` to know more!
 
 __mod_name__ = "Filters"
 
-FILTER_HANDLER = CommandHandler("filter", filters)
+FILTER_HANDLER = CommandHandler("filters", filters)
 STOP_HANDLER = CommandHandler("stop", stop_filter)
 RMALLFILTER_HANDLER = CommandHandler(
     "removeallfilters", rmall_filters, filters=Filters.group)
