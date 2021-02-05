@@ -6,7 +6,7 @@ from telegram.ext import run_async, CommandHandler, CallbackContext
 from SaitamaRobot import dispatcher
 
 @run_async
-def lyrics(update: Update, context: CallbackContext):
+def lyric(update: Update, context: CallbackContext):
     args = context.args
     msg = update.effective_message
     query = " ".join(args)
@@ -17,7 +17,7 @@ def lyrics(update: Update, context: CallbackContext):
     else:
         song = Song.find_song(query)
         if song:
-            if song.lyrics:
+            if song.lyric:
                 reply = song.format()
             else:
                 reply = "Couldn't find any lyrics for that song!"
@@ -37,7 +37,7 @@ def lyrics(update: Update, context: CallbackContext):
 
 
 
-LYRICS_HANDLER = CommandHandler("lyrics", lyrics, pass_args=True)
+LYRICS_HANDLER = CommandHandler("lyric", lyric, pass_args=True)
 
 dispatcher.add_handler(LYRICS_HANDLER)
 
@@ -45,7 +45,7 @@ dispatcher.add_handler(LYRICS_HANDLER)
 __help__ = """
 *Song lyrics usage*
 
- example : /lyrics faded
+ example : /lyric faded
 """
 
 __mod_name__ = "Lyrics"
