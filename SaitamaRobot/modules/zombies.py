@@ -48,24 +48,24 @@ async def is_administrator(user_id: int, message):
     return admin
 
 
-@telethn.on(events.NewMessage(pattern=f"^[!/]zombies ?(.*)"))
-async def zombies(event):
-    """ For .zombies command, list all the zombies in a chat. """
+@telethn.on(events.NewMessage(pattern=f"^[!/]deadac ?(.*)"))
+async def deadac(event):
+    """ For .deadac command, list all the deleted accounts in a chat. """
 
     con = event.pattern_match.group(1).lower()
     del_u = 0
     del_status = " No Deleted Accounts Found, Group Is Clean (^_^) "
 
     if con != "clean":
-        find_zombies = await event.respond("Searching For Zombies...")
+        find_zombies = await event.respond("Searching For deadac...")
         async for user in event.client.iter_participants(event.chat_id):
 
             if user.deleted:
                 del_u += 1
                 await sleep(1)
         if del_u > 0:
-            del_status = f"Found **{del_u}** Zombies In This Group.\
-            \nClean Them By Using -> `/zombies clean`"
+            del_status = f"Found **{del_u}** deadac In This Group.\
+            \nClean Them By Using -> `/deadac clean`"
         await find_zombies.edit(del_status)
         return
 
@@ -83,7 +83,7 @@ async def zombies(event):
         await event.respond("I Am Not An Admin Here!")
         return
 
-    cleaning_zombies = await event.respond("Cleaning Zombies...")
+    cleaning_zombies = await event.respond("Cleaning deadac...")
     del_u = 0
     del_a = 0
 
@@ -119,6 +119,6 @@ Sometimes, in a group there are multiple accounts named as deleted account(s).
 They are nothing but dead accounts which are no longer a part of Telegram.
 So you can use this command to remove such accounts from your group in a single command.
 Admin commands:
-- /zombies : do this in your group and all the dead accounts are gonee!!
+- /deadac : do this in your group and all the dead accounts are gonee!!
 \
 """       
