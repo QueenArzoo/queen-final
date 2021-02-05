@@ -140,13 +140,13 @@ Chatbot utilizes the CoffeeHouse API and allows to talk.
 
 *Commands:* 
 *Admins only:*
- • `/activateai`*:* Activate A.I in group.
- • `/disableai`*:*  Deactivate A.I in group.
+ • `/aion`*:* Activate A.I in group.
+ • `/aioff`*:*  Deactivate A.I in group.
 
 """
 
-ADD_CHAT_HANDLER = CommandHandler("activateai", add_chat)
-REMOVE_CHAT_HANDLER = CommandHandler("disableai", remove_chat)
+ADD_CHAT_HANDLER = CommandHandler("aion", add_chat)
+REMOVE_CHAT_HANDLER = CommandHandler("aioff", remove_chat)
 CHATBOT_HANDLER = MessageHandler(
     Filters.text & (~Filters.regex(r"^#[^\s]+") & ~Filters.regex(r"^!")
                     & ~Filters.regex(r"^\/")), chatbot)
