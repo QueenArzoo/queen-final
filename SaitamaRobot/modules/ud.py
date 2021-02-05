@@ -6,7 +6,7 @@ from telegram.ext import CallbackContext, run_async
 
 
 @run_async
-def ud(update: Update, context: CallbackContext):
+def uds(update: Update, context: CallbackContext):
     message = update.effective_message
     text = message.text[len('/ud '):]
     results = requests.get(
@@ -18,7 +18,7 @@ def ud(update: Update, context: CallbackContext):
     message.reply_text(reply_text, parse_mode=ParseMode.MARKDOWN)
 
 
-UD_HANDLER = DisableAbleCommandHandler(["ud"], ud)
+UD_HANDLER = DisableAbleCommandHandler(["uds"], uds)
 
 dispatcher.add_handler(UD_HANDLER)
 
