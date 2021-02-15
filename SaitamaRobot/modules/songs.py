@@ -40,7 +40,7 @@ except:
 	from youtubesearchpython import SearchVideos 
 	pass
 
-@register(pattern="^!ssgg (.*)")
+@register(pattern="^!song (.*)")
 async def download_video(v_url):
 
     lazy = v_url ; sender = await lazy.get_sender() ; me = await lazy.client.get_me()
@@ -165,7 +165,7 @@ async def download_video(v_url):
         os.remove(f"{rip_data['id']}.mp4")
         await rkp.delete()
 
-@register(pattern="^!videeoso (.*)")
+@register(pattern="^!video (.*)")
 async def download_video(v_url):  
     lazy = v_url ; sender = await lazy.get_sender() ; me = await lazy.client.get_me()
     if not sender.id == me.id:
