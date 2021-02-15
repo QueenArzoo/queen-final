@@ -44,4 +44,4 @@ __help__ = """
 just do as follows:-
  -/ts <Any Text> : Converts text to speech.
 """
-__mod_name__ = "Text-Speech"
+__mod_name__ = "Speech"
